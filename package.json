@@ -3,8 +3,18 @@
   "version": "0.1.0",
   "private": true,
   "description": "Lumen — a daily devotion and journaling web app (prototype).",
+  "type": "module",
   "scripts": {
+    "dev": "vite --port 5173",
+    "build": "vite build",
+    "preview": "vite preview --port 5173",
     "start": "npx --yes serve . -l 5173",
     "tablet": "npx --yes serve . -l 5173 --no-clipboard"
+  },
+  "devDependencies": {
+    "vite": "^8.3.4"
+  },
+  "engines": {
+    "node": ">=20.19.0"
   }
 }

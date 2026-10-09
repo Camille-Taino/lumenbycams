@@ -7,11 +7,11 @@
   <meta name="description" content="A quiet place to meet with God, every day.">
 
   <!-- Installable app (PWA): lets you add Lumen to a tablet's home screen -->
-  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="manifest" href="manifest.webmanifest" vite-ignore>
   <meta name="theme-color" content="#E9DFCC" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#17110D" media="(prefers-color-scheme: dark)">
-  <link rel="icon" href="icons/icon-192.png" type="image/png">
-  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <link rel="icon" href="icons/icon-192.png" type="image/png" vite-ignore>
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" vite-ignore>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
@@ -46,8 +46,8 @@
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <!-- Content first, then the app. Both are plain scripts (no build step). -->
-<script src="js/data.js"></script>
-<script src="js/app.js"></script>
+<script src="js/data.js" vite-ignore></script>
+<script src="js/app.js" vite-ignore></script>
 <script>
   // Offline support: only works over https:// or http://localhost
   if ('serviceWorker' in navigator && (location.protocol === 'https:' || location.hostname === 'localhost')) {
