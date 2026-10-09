@@ -1,0 +1,10 @@
+{
+  // Live Server: open index.html and click "Go Live" in the status bar.
+  // host 0.0.0.0 lets a tablet on the same Wi-Fi open the app too.
+  "liveServer.settings.host": "0.0.0.0",
+  "liveServer.settings.port": 5500,
+  "liveServer.settings.root": "/",
+  "liveServer.settings.useLocalIp": true,
+  "editor.formatOnSave": false,
+  "files.associations": { "*.webmanifest": "json" }
+}

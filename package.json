@@ -1,0 +1,10 @@
+{
+  "name": "lumen-devotional",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Lumen — a daily devotion and journaling web app (prototype).",
+  "scripts": {
+    "start": "npx --yes serve . -l 5173",
+    "tablet": "npx --yes serve . -l 5173 --no-clipboard"
+  }
+}

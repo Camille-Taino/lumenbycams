@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Lumen</title>
+  <meta name="description" content="A quiet place to meet with God, every day.">
+
+  <!-- Installable app (PWA): lets you add Lumen to a tablet's home screen -->
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="theme-color" content="#E9DFCC" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#17110D" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="icons/icon-192.png" type="image/png">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Lumen">
+
+  <!-- Fonts: Cormorant Garamond (scripture), Figtree (interface), Caveat (handwriting) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Figtree:wght@400;500;600;700&family=Caveat:wght@400;600&display=swap">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="mtop">
+  <span class="brand" style="padding:0;font-size:28px"><svg width="20" height="26" viewBox="0 0 44 56" aria-hidden="true"><path d="M22 4c6 8 8 13 0 22-8-9-6-14 0-22z" fill="#E7B25C"/><rect x="15" y="28" width="14" height="24" rx="2" fill="currentColor"/></svg>Lumen</span>
+  <span style="display:flex;gap:6px">
+    <button class="mbtn" data-toggle-theme><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg><span class="themeLabel">Candlelight</span></button>
+    <button class="mbtn" data-toggle-size><span aria-hidden="true" style="font-family:var(--f-display);font-size:19px;font-weight:600">Aa</span><span class="sizeLabel">Larger text</span></button>
+  </span>
+</header>
+<div class="app">
+  <nav class="rail" aria-label="Main">
+    <div class="brand"><svg width="26" height="34" viewBox="0 0 44 56" aria-hidden="true"><path d="M22 4c6 8 8 13 0 22-8-9-6-14 0-22z" fill="#E7B25C"/><rect x="15" y="28" width="14" height="24" rx="2" fill="currentColor"/></svg>Lumen</div>
+    <div id="railNav"></div>
+    <div class="spacer"></div>
+    <button class="mini" data-toggle-theme><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg><span class="themeLabel">Candlelight</span></button>
+    <button class="mini" data-toggle-size><span aria-hidden="true" style="font-family:var(--f-display);font-size:20px;font-weight:600;width:22px">Aa</span><span class="sizeLabel">Larger text</span></button>
+  </nav>
+  <main id="main" tabindex="-1"></main>
+</div>
+<nav class="tabs" id="tabs" aria-label="Main"></nav>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<!-- Content first, then the app. Both are plain scripts (no build step). -->
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+<script>
+  // Offline support: only works over https:// or http://localhost
+  if ('serviceWorker' in navigator && (location.protocol === 'https:' || location.hostname === 'localhost')) {
+    window.addEventListener('load', () => navigator.serviceWorker.register('sw.js').catch(() => {}));
+  }
+</script>
+</body>
+</html>
